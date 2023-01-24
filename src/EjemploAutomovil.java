@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class EjemploAutomovil {
     public static void main(String[] args) {
 
@@ -12,7 +14,18 @@ public class EjemploAutomovil {
 
         Automovil nissan2 = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);
 
+        Automovil auto = new Automovil();
+
+        Date fecha = new Date();
+
+        System.out.println(nissan);
+
+        System.out.println(auto.equals(fecha));
+
+        System.out.println(auto.equals(nissan2));
+
         System.out.println(nissan==nissan2);
+
         System.out.println(nissan.equals(nissan2));
 
 

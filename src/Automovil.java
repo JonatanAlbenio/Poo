@@ -1,13 +1,13 @@
 public class Automovil {
 
 
-     private String fabricante;
+    private String fabricante;
 
-    private  String modelo;
-    private   String color="gris";
-    private  double cilindrada;
+    private String modelo;
+    private String color = "gris";
+    private double cilindrada;
 
-    public Automovil(){
+    public Automovil() {
 
     }
 
@@ -18,20 +18,21 @@ public class Automovil {
     }
 
     public Automovil(String fabricante, String modelo, String color, double cilindrada) {
-       this(fabricante,modelo,color);
+        this(fabricante, modelo, color);
         this.cilindrada = cilindrada;
     }
 
     public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadTanque) {
-        this(fabricante,modelo,color,cilindrada);
+        this(fabricante, modelo, color, cilindrada);
         this.capacidadTanque = capacidadTanque;
     }
 
-    public Automovil(String fabricante, String modelo ){
-        this.fabricante=fabricante;
-        this.modelo=modelo;
+    public Automovil(String fabricante, String modelo) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
     }
-    private int capacidadTanque =40;
+
+    private int capacidadTanque = 40;
 
     public String getFabricante() {
         return fabricante;
@@ -74,50 +75,51 @@ public class Automovil {
         this.capacidadTanque = capacidadTanque;
     }
 
-    public  String  detalle(){
-        String modelo ="otro";
+    public String detalle() {
+        String modelo = "otro";
 
         StringBuilder sb = new StringBuilder();
 
         sb.append("automovil.fabricante = " + this.fabricante);
         sb.append("\n automovil.modelo = " + this.modelo);
         sb.append(" \n automovil.color = " + this.color);
-        sb.append( "\n automovil.cilindrada = " + this.cilindrada);
+        sb.append("\n automovil.cilindrada = " + this.cilindrada);
 
         return sb.toString();
     }
 
 
+    public String acelerar(int rpm) {
 
-    public String acelerar(int rpm ){
 
-
-        return "El auto "+ fabricante+ "Acelerando a " + rpm +"rpm";
-
-    }
-    public String frenar (){
-        return  fabricante + " "+this.modelo + " Frenando ";
+        return "El auto " + fabricante + "Acelerando a " + rpm + "rpm";
 
     }
 
-    public String acelerarFrenar(int rpm){
+    public String frenar() {
+        return fabricante + " " + this.modelo + " Frenando ";
+
+    }
+
+    public String acelerarFrenar(int rpm) {
 
         String acelerar = this.acelerar(rpm);
         String frenar = this.frenar();
-        return acelerar+ "\n"+ frenar;
+        return acelerar + "\n" + frenar;
 
 
     }
 
-    public float calcularConsumo(int km,float porcentajeBencina){
+    public float calcularConsumo(int km, float porcentajeBencina) {
 
-        return km/(capacidadTanque*porcentajeBencina);
+        return km / (capacidadTanque * porcentajeBencina);
 
 
     }
-    public float calcularConsumo(int km,int porcentajeBencina){
 
-        return km/(capacidadTanque*(porcentajeBencina/100f));
+    public float calcularConsumo(int km, int porcentajeBencina) {
+
+        return km / (capacidadTanque * (porcentajeBencina / 100f));
 
 
     }
@@ -125,8 +127,18 @@ public class Automovil {
 
     @Override
     public boolean equals(Object obj) {
+        if(this == obj){
+            return true;
+        }
+        if(!(obj instanceof Automovil)){
+            return false;
+        }
+
         Automovil a = (Automovil) obj;
-        return (this.fabricante.equalsIgnoreCase(a.getFabricante())&&this.modelo.equalsIgnoreCase(a.getModelo()));
+
+        return (this.fabricante != null && this.modelo != null
+                && this.fabricante.equalsIgnoreCase(a.getFabricante())
+                && this.modelo.equalsIgnoreCase(a.getModelo()));
 
 
     }
