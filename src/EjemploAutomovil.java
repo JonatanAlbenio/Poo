@@ -2,21 +2,32 @@ public class EjemploAutomovil {
     public static void main(String[] args) {
 
 
-        Automovil subaru = new Automovil();
-        subaru.fabricante="subaru";
-        subaru.modelo="Impreza";
-        subaru.cilindrada=2.1;
+        Automovil subaru = new Automovil("subaru","Impreza");
 
-        Automovil mazda = new Automovil();
-        mazda.cilindrada=3.1;
-        mazda.fabricante="Mazada";
-        mazda.modelo="BT-90";
-        mazda.color="Rojo";
+
+
+        Automovil mazda = new Automovil("Manzda","Kia","rojo",3.0);
+
+        Automovil nissan = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);
+
+        Automovil nissan2 = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);
+
+        System.out.println(nissan==nissan2);
+        System.out.println(nissan.equals(nissan2));
 
 
         System.out.println(" = " + subaru.detalle());
 
         System.out.println(" = " + mazda.detalle());
+        System.out.println("nissan.detalle() = " + nissan.detalle());
+        System.out.println(" = " + subaru.acelerar(200));
+
+        System.out.println("subaru.frenar() = " + subaru.frenar());
+        System.out.println("mazda.acelerarFrenar() = " + mazda.acelerarFrenar(123));
+
+        System.out.println("Kilometros por litro " + subaru.calcularConsumo(300,0.6f));
+        System.out.println("Kilometros por litro nidsas " + nissan.calcularConsumo(300,60));
+
 
     }
 }
