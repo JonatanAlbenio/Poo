@@ -8,6 +8,7 @@ public class EjemploAutomovil {
 
 
 
+
         Automovil mazda = new Automovil("Manzda","Kia","rojo",3.0);
 
         Automovil nissan = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);

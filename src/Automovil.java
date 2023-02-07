@@ -7,6 +7,8 @@ public class Automovil {
     private String color = "gris";
     private double cilindrada;
 
+    public static final Integer velocidad_max =123;
+    public static final Integer velocidad_maxCiudad =123;
     public Automovil() {
 
     }
