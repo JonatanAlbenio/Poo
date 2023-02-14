@@ -8,12 +8,14 @@ public class EjemploAutomovil {
 
 
 
+        subaru.setColor(Color.AZUL);
 
-        Automovil mazda = new Automovil("Manzda","Kia","rojo",3.0);
 
-        Automovil nissan = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);
+        Automovil mazda = new Automovil("Manzda","Kia",Color.AZUL,3.0);
 
-        Automovil nissan2 = new Automovil("nissan","Navvarra","gris oscuro",3.4,50);
+        Automovil nissan = new Automovil("nissan","Navvarra",Color.BLANCO,3.4,50);
+
+        Automovil nissan2 = new Automovil("nissan","Navvarra",Color.AZUL,3.4,50);
 
         Automovil auto = new Automovil();
 

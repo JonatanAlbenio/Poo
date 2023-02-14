@@ -4,27 +4,37 @@ public class Automovil {
     private String fabricante;
 
     private String modelo;
-    private String color = "gris";
+    private Color color = Color.GRIS;
     private double cilindrada;
 
     public static final Integer velocidad_max =123;
     public static final Integer velocidad_maxCiudad =123;
+
+    public static final String COLOR_ROJO ="rojo";
+
+    public static final String COLOR_AMARILLO ="Amarillo";
+
+    public static final String COLOR_AZUL="azul";
+
+    public static final String COLOR_BLANCO="Blanco";
+    public static final String COLOR_GRIS ="gris Oscuro";
+
     public Automovil() {
 
     }
 
-    public Automovil(String fabricante, String modelo, String color) {
+    public Automovil(String fabricante, String modelo, Color color) {
         this.fabricante = fabricante;
         this.modelo = modelo;
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
         this(fabricante, modelo, color);
         this.cilindrada = cilindrada;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadTanque) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadTanque) {
         this(fabricante, modelo, color, cilindrada);
         this.capacidadTanque = capacidadTanque;
     }
@@ -53,11 +63,11 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
